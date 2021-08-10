@@ -143,6 +143,13 @@ you can get a notebook with datasets from ![this link](https://github.com/knwin/
 ### Credits: 
 I would like to thank ImageAI and ESRI for sharing their articles,tutorials and Deeplearning frameworks. Without their sharing, I would not be able to learn Deeplearning application in Geospatial Image processing this much sooner.
 
+### Author
+```
+Kyaw Naing Win
+11 August 2021
+```
+
+
 [imageai_10]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_10lines.PNG
 [imageai_6]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_6lines.PNG
 [view_images]:https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/view_images.PNG          
