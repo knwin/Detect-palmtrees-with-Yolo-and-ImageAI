@@ -32,6 +32,9 @@ Annotation is done in LabelImg application
 | ![][view_images]|
 :-----------------:
 
+| ![][csv_view]   |
+:-----------------:
+
 | ![][folium_map] |
 :-----------------:
 
@@ -40,4 +43,7 @@ Annotation is done in LabelImg application
 [view_images]:https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/view_images.PNG          
 [labelImg]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/labelImg.png
 [xml]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/xml.PNG
+[csv_view]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/csv_view.PNG
+
+[imageai_6]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_6lines.PNG
 [folium_map]:https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/folium_map.PNG
