@@ -4,12 +4,12 @@
 This exercise is to demonstrate object detection model training for Geospatial Image processing with YoloV3 and ImageAI module.
 
 If you are new to objection detection I would recommend to read below articles of Moses Olafenwa.
- - ![Object Detection with 10 lines of code][https://towardsdatascience.com/object-detection-with-10-lines-of-code-d6cb4d86f606]
- - ![Train Object Detection AI with 6 lines of code written][https://medium.com/deepquestai/train-object-detection-ai-with-6-lines-of-code-6d087063f6ff]
+ - ![Object Detection with 10 lines of code](https://towardsdatascience.com/object-detection-with-10-lines-of-code-d6cb4d86f606)
+ - ![Train Object Detection AI with 6 lines of code written](https://medium.com/deepquestai/train-object-detection-ai-with-6-lines-of-code-6d087063f6ff)
  
-For Applications of Deeplearning in Geospatial Field, please read ESRI's tutorial![Use deep learning to assess palm tree health][https://learn.arcgis.com/en/projects/use-deep-learning-to-assess-palm-tree-health/]
+For Applications of Deeplearning in Geospatial Field, please read ESRI's tutorial![Use deep learning to assess palm tree health](https://learn.arcgis.com/en/projects/use-deep-learning-to-assess-palm-tree-health/)
 
-This exercise is combination of knowledge gained from these articles.
+This exercise is fusion of knowledge gained from these articles.
 
 |![][imageai_10]     |![][imageai_6]      |
 :-------------------:|:-------------------:
@@ -129,7 +129,7 @@ Once you get out of colab, your trained model, model definition json and deteion
 With the trained model and json file you can continue detection on your laptop.
 
 ### Try it now!
-you can get a notebook with datasets from this link on my github. You open it on Google colab and read and run each cells.
+you can get a notebook with datasets from ![this link](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/raw/main/Palm_tree_detection_on_large_aerial_imagery_with_yolov3_and_ImageAI_github_ver.ipynb) on my github. You open it on Google colab and read and run each cells.
 
 ### Credits: 
 I would like to thank ImageAI and ESRI for sharing their articales,tutorials and Deeplearning frameworks. Without their sharing, I would not be able to learn Deeplearning application in Geospatial Image processing.
