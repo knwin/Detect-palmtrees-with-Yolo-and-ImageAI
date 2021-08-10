@@ -37,6 +37,9 @@ Annotation is done in LabelImg application
 | ![][view_images]|
 :-----------------:
 
+
+[view_images]:https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/view_images.PNG
+
           
 [labelImg]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/labelImg.png
 
