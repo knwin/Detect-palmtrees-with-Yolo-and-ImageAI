@@ -32,8 +32,16 @@ Annotation is done in LabelImg application
 | ![][view_images]|
 :-----------------:
 
+#### model training
+
+#### detect on UAV image
+
+#### view report
+
 | ![][csv_view]   |
 :-----------------:
+
+#### view on Map
 
 | ![][folium_map] |
 :-----------------:
