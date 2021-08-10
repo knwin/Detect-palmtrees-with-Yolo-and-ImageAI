@@ -3,8 +3,8 @@
 A demonstration of object detection in drone moasic with Yolo and ImageAI
 Object detection in Geospatial Image Processing is never easier than now thanks to Deep learning models
 ![]()
-<img src="https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_10lines.PNG" width="600"/>
-<img src="https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_6lines.PNG" width ="600")
+<img src="https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_10lines.PNG" width="400"/>
+<img src="https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_6lines.PNG" width ="400"/>
 
 ### train and validation data structure
 ```
