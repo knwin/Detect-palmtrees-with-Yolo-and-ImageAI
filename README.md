@@ -42,4 +42,4 @@ Annotation is done in LabelImg application
 
 [xml]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/xml.PNG
 
-[view_images]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/view_images.PNG
+
