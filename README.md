@@ -1,8 +1,15 @@
 # Detect palm trees on large aerial image with Yolo and ImageAI
 <img src="https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/palm_tree.JPG" alt="Palm trees detected" width = "100%">
 
-A demonstration of object detection in drone moasic with Yolo and ImageAI
-Object detection in Geospatial Image Processing is never easier than now thanks to Deep learning models
+This exercise is to demonstrate object detection model training for Geospatial Image processing with YoloV3 and ImageAI module.
+
+If you are new to objection detection I would recommend to read below articles of Moses Olafenwa.
+ - ![Object Detection with 10 lines of code][https://towardsdatascience.com/object-detection-with-10-lines-of-code-d6cb4d86f606]
+ - ![Train Object Detection AI with 6 lines of code written][https://medium.com/deepquestai/train-object-detection-ai-with-6-lines-of-code-6d087063f6ff]
+ 
+For Applications of Deeplearning in Geospatial Field, please read ESRI's tutorial![Use deep learning to assess palm tree health][https://learn.arcgis.com/en/projects/use-deep-learning-to-assess-palm-tree-health/]
+
+This exercise is combination of knowledge gained from these articles.
 
 |![][imageai_10]     |![][imageai_6]      |
 :-------------------:|:-------------------:
@@ -32,8 +39,16 @@ about 10% of the images are used for validation. Train and validation images are
 
 | ![tiles with annotation overlay][view_images]|
 :-----------------:
+#### ImageAI installation
+It is straight forward as follow
+```
+!pip install imageai --upgrade
+```
 
-#### model training
+#### Model training
+There are only 5 lines of code for model training. There is not much controls for hypyer-parameters except batch_size and epochs.
+I trained 50 epochs and took about 4 hours.
+
 ```
 trainer = DetectionModelTrainer()
 trainer.setModelTypeAsYOLOv3()
@@ -43,18 +58,18 @@ trainer.trainModel()
 ```
 
 ```
-Generating anchor boxes for training images and annotation...
-Average IOU for 9 anchors: 0.90
-Anchor Boxes generated.
-Detection configuration saved in  Palmtrees/json/detection_config.json
-Evaluating over 40 samples taken from Palmtrees/validation
-Training over 353 samples  given at Palmtrees/train
-Training on: 	['palm_tree']
-Training with Batch Size:  10
-Number of Training Samples:  353
-Number of Validation Samples:  40
-Number of Experiments:  5
-Training with transfer learning from pretrained Model
+            Generating anchor boxes for training images and annotation...
+            Average IOU for 9 anchors: 0.90
+            Anchor Boxes generated.
+            Detection configuration saved in  Palmtrees/json/detection_config.json
+            Evaluating over 40 samples taken from Palmtrees/validation
+            Training over 353 samples  given at Palmtrees/train
+            Training on: 	['palm_tree']
+            Training with Batch Size:  10
+            Number of Training Samples:  353
+            Number of Validation Samples:  40
+            Number of Experiments:  5
+            Training with transfer learning from pretrained Model
 ....
 ....
 
@@ -75,7 +90,17 @@ Epoch 5/5
 ....
 
 ```
-#### detect on UAV image
+#### Detection on UAV image
+Although training tile images are created from areal imagery, there is a huge difference in size. While tiles are 448 x 448, original image is about 18,000 x 25,000. As a results, detection directly on the original image produce not output at all. Therefore original image is split into tiles during the detection process and results are stored in a csv file. Location of Bounding boxes are converted to GCS coordinates so that the results could be displacy on the map.
+```
+image = "Kolovai UAV4R Subset.tif"
+chip_h = 448
+chip_w = 448
+prob_threshold = 25
+csv_name = "detection_report.csv"
+
+detect(detector,image,chip_h,chip_w,prob_threshold,csv_name)
+```
 ```
             detection started: 2021-08-10 17:13:55.259247 
 
@@ -85,18 +110,26 @@ Epoch 5/5
 
 
             detection results are saved in detection_report.csv
-
 ```
 
-#### view report
+#### View report with pandas
+The csv file contains center coordinates, width, height, aspect_ratio, probibility information of each bounding box of detected palm trees.
+
 
 | ![][csv_view]   |
 :-----------------:
 
 #### view on Map
+For quick check, the csv file is viewed in a folium map in the notebook
 
 | ![][folium_map] |
 :-----------------:
+### Keep your model and results
+Once you get out of colab, your trained model, model definition json and deteion report (csv) will be wipe off. Therefore download them before you turn off the browser.
+With the trained model and json file you can continue detection on your laptop.
+
+### Try it now!
+you can get a notebook with datasets from this link on my github. You open it on Google colab and read and run each cells.
 
 ### Credits: 
 I would like to thank ImageAI and ESRI for sharing their articales,tutorials and Deeplearning frameworks. Without their sharing, I would not be able to learn Deeplearning application in Geospatial Image processing.
