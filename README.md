@@ -8,7 +8,10 @@ Object detection in Geospatial Image Processing is never easier than now thanks 
 :-------------------:|:-------------------:
 <img src="https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/esri_ssd.PNG" alt="ESRI Tutorial" width = "100%">
 
-### train and validation data structure
+### Training data preparation
+A total of about 400 images of 448 x 448 size are prepared and label partly in ArcGIS Pro and LabelImg. I just used the output tiles left over after ESRI tutorial otherwise slicing the image into tiles could be done by Qtile in QGIS or with python. 
+about 10% of the images are used for validation. Train and validation images are stored as follow as needed by ImageAI.
+
 ```
 >> train    >> images       >> img_1.jpg  (shows Object_1)
             >> images       >> img_2.jpg  (shows Object_2)
@@ -24,15 +27,21 @@ Object detection in Geospatial Image Processing is never easier than now thanks 
                 >> annotations  >> img_152.xml (describes Object_2)
                 >> annotations  >> img_153.xml (describes Object_1)
 ```
-Annotation is done in LabelImg application
-
-|![][labelImg]|![][xml]    |
+|![Annotation with LabelImg application][labelImg]|![annotation data][xml]    |
 :------------:|:-----------:
 
-| ![][view_images]|
+| ![tiles with annotation overlay][view_images]|
 :-----------------:
 
 #### model training
+```
+trainer = DetectionModelTrainer()
+trainer.setModelTypeAsYOLOv3()
+trainer.setDataDirectory(data_directory=data_directory)
+trainer.setTrainConfig(object_names_array=object_names, batch_size=batch_size, num_experiments=epochs, train_from_pretrained_model=pretrained_model)
+trainer.trainModel()
+```
+
 ```
 Generating anchor boxes for training images and annotation...
 Average IOU for 9 anchors: 0.90
@@ -88,6 +97,9 @@ Epoch 5/5
 
 | ![][folium_map] |
 :-----------------:
+
+### Credits: 
+I would like to thank ImageAI and ESRI for sharing their articales,tutorials and Deeplearning frameworks. Without their sharing, I would not be able to learn Deeplearning application in Geospatial Image processing.
 
 [imageai_10]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_10lines.PNG
 [imageai_6]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_6lines.PNG
