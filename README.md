@@ -46,8 +46,13 @@ It is straight forward as follow
 ```
 
 #### Model training
-There are only 5 lines of code for model training. There is not much controls for hypyer-parameters except batch_size and epochs.
-I trained 50 epochs and took about 4 hours.
+Actually model training in this exercise is not from scratch. There is a method called "Transfer learnining" in model training in deeplearning. Although previously trained model (trained on large number of training images) does not have your object of interest (palm tree in my case), the trained weights can be used in your training so that it reduce a lot of training time.
+
+In this exercise, I used pretrained yolo model trained on COCO dataset by ImageAI.
+
+There are only 5 lines of code for model training. And also there is not much controls for hypyer-parameters except batch_size and epochs. ImageAI seems to take care of parameter configurations in the background. This is some how good for beginer learners.
+
+I trained 50 epochs and it took about 4 hours.
 
 ```
 trainer = DetectionModelTrainer()
@@ -132,7 +137,7 @@ With the trained model and json file you can continue detection on your laptop.
 you can get a notebook with datasets from ![this link](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/raw/main/Palm_tree_detection_on_large_aerial_imagery_with_yolov3_and_ImageAI_github_ver.ipynb) on my github. You open it on Google colab and read and run each cells.
 
 ### Credits: 
-I would like to thank ImageAI and ESRI for sharing their articales,tutorials and Deeplearning frameworks. Without their sharing, I would not be able to learn Deeplearning application in Geospatial Image processing.
+I would like to thank ImageAI and ESRI for sharing their articles,tutorials and Deeplearning frameworks. Without their sharing, I would not be able to learn Deeplearning application in Geospatial Image processing this much sooner.
 
 [imageai_10]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_10lines.PNG
 [imageai_6]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_6lines.PNG
