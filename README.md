@@ -30,6 +30,12 @@ Object detection in Geospatial Image Processing is never easier than now thanks 
                 >> annotations  >> img_153.xml (describes Object_1)
 ```
 Annotation is done in LabelImg application
+
+|![][labelImg]|![][xml]    |
+:------------:|:-----------:
+
+![][view_images]
+
 [labelImg]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/labelImg.png
 
 [xml]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/xml.PNG
