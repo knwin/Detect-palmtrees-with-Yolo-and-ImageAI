@@ -2,3 +2,28 @@
 ![](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/palm_tree.JPG "Palm trees detected")
 A demonstration of object detection in drone moasic with Yolo and ImageAI
 Object detection in Geospatial Image Processing is never easier than now thanks to Deep learning models
+![](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_10lines.PNG)
+
+![](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_6lines.PNG)
+
+### train and validation data structure
+```
+>> train    >> images       >> img_1.jpg  (shows Object_1)
+            >> images       >> img_2.jpg  (shows Object_2)
+            >> images       >> img_3.jpg  (shows Object_1, Object_3 and Object_n)
+            >> annotations  >> img_1.xml  (describes Object_1)
+            >> annotations  >> img_2.xml  (describes Object_2)
+            >> annotations  >> img_3.xml  (describes Object_1, Object_3 and Object_n)
+ 
+>> validation   >> images       >> img_151.jpg (shows Object_1, Object_3 and Object_n)
+                >> images       >> img_152.jpg (shows Object_2)
+                >> images       >> img_153.jpg (shows Object_1)
+                >> annotations  >> img_151.xml (describes Object_1, Object_3 and Object_n)
+                >> annotations  >> img_152.xml (describes Object_2)
+                >> annotations  >> img_153.xml (describes Object_1)
+```
+Annotation is done in LabelImg application
+![](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/labelImg.png)
+![](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/xml.PNG)
+
+![](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/view_images.PNG)
