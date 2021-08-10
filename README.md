@@ -39,13 +39,13 @@ about 10% of the images are used for validation. Train and validation images are
 
 | ![tiles with annotation overlay][view_images]|
 :-----------------:
-#### ImageAI installation
+### ImageAI installation
 It is straight forward as follow
 ```
 !pip install imageai --upgrade
 ```
 
-#### Model training
+### Model training
 Actually model training in this exercise is not from scratch. There is a method called "Transfer learnining" in model training in deeplearning. Although previously trained model (trained on large number of training images) does not have your object of interest (palm tree in my case), the trained weights can be used in your training so that it reduce a lot of training time.
 
 In this exercise, I used pretrained yolo model trained on COCO dataset by ImageAI.
@@ -95,8 +95,10 @@ Epoch 5/5
 ....
 
 ```
-#### Detection on UAV image
+### Detection on UAV image
 Although training tile images are created from areal imagery, there is a huge difference in size. While tiles are 448 x 448, original image is about 18,000 x 25,000. As a results, detection directly on the original image produce not output at all. Therefore original image is split into tiles during the detection process and results are stored in a csv file. Location of Bounding boxes are converted to GCS coordinates so that the results could be displacy on the map.
+
+
 ```
 image = "Kolovai UAV4R Subset.tif"
 chip_h = 448
@@ -106,6 +108,8 @@ csv_name = "detection_report.csv"
 
 detect(detector,image,chip_h,chip_w,prob_threshold,csv_name)
 ```
+I would suggest to use low probabilty threshold values during detection so as not to miss the palm trees. Later you can filter the results in csv with your desire threshold.
+
 ```
             detection started: 2021-08-10 17:13:55.259247 
 
@@ -117,15 +121,15 @@ detect(detector,image,chip_h,chip_w,prob_threshold,csv_name)
             detection results are saved in detection_report.csv
 ```
 
-#### View report with pandas
-The csv file contains center coordinates, width, height, aspect_ratio, probibility information of each bounding box of detected palm trees.
+### View report with pandas
+The csv file contains center coordinates, width, height, aspect_ratio, probibility, area information of each bounding box of detected palm trees. width, height, aspect_ratio, and area are in pixels. These are useful for filtering higher quality results later.
 
 
 | ![][csv_view]   |
 :-----------------:
 
-#### view on Map
-For quick check, the csv file is viewed in a folium map in the notebook
+### View results on Map
+For quick check, the csv file is viewed in a folium map in the notebook.
 
 | ![][folium_map] |
 :-----------------:
