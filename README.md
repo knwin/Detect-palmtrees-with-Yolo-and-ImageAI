@@ -8,11 +8,6 @@ Object detection in Geospatial Image Processing is never easier than now thanks 
 :-------------------:|:-------------------:
 <img src="https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/esri_ssd.PNG" alt="ESRI Tutorial" width = "100%">
 
-[imageai_10]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_10lines.PNG
-
-[imageai_6]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_6lines.PNG
-
-
 ### train and validation data structure
 ```
 >> train    >> images       >> img_1.jpg  (shows Object_1)
@@ -37,12 +32,12 @@ Annotation is done in LabelImg application
 | ![][view_images]|
 :-----------------:
 
+| ![][folium_map] |
+:-----------------:
 
-
-[view_images]:https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/view_images.PNG
-          
+[imageai_10]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_10lines.PNG
+[imageai_6]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_6lines.PNG
+[view_images]:https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/view_images.PNG          
 [labelImg]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/labelImg.png
-
 [xml]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/xml.PNG
-
-
+[folium_map]:https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/folium_map.PNG
