@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>000000313.jpg</filename>
+	<path>D:\Ai_OilPalm_Samples\PalmTrees\images\000000313.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>448</width>
+		<height>448</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>palm_tree</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>20</xmin>
+			<ymin>140</ymin>
+			<xmax>89</xmax>
+			<ymax>213</ymax>
+		</bndbox>
+	</object>
+</annotation>

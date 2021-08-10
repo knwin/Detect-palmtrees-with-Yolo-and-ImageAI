@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<annotation>
+    <filename>000000360.jpg</filename>
+    <source>
+        <annotation>ESRI ArcGIS Pro</annotation>
+    </source>
+    <size>
+        <width>448</width>
+        <height>448</height>
+        <depth>3</depth>
+    </size>
+    <object>
+        <name>palm_tree</name>
+        <bndbox>
+            <xmin>387.54</xmin>
+            <ymin>286.08</ymin>
+            <xmax>443.28</xmax>
+            <ymax>345.49</ymax>
+        </bndbox>
+    </object>
+    <object>
+        <name>palm_tree</name>
+        <bndbox>
+            <xmin>369.02</xmin>
+            <ymin>81.89</ymin>
+            <xmax>429.69</xmax>
+            <ymax>146.54</ymax>
+        </bndbox>
+    </object>
+</annotation>
