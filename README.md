@@ -33,7 +33,8 @@ Annotation is done in LabelImg application
 
 |![][labelImg]|![][xml]    |
 :------------:|:-----------:
-<img src="https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/view_images.PNG" />
+
+![][view_images]
 
           
 [labelImg]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/labelImg.png
