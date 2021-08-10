@@ -5,7 +5,7 @@ Object detection in Geospatial Image Processing is never easier than now thanks 
 
 :-------------------:|:-------------------:
 |![][imageai_10]     |![][imageai_6]      |
-
+:-------------------:|:-------------------:
 
 [imageai_10]: https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/imageai_10lines.PNG
 
