@@ -1,23 +1,24 @@
 # Detect palm trees on large aerial image with Yolo and ImageAI
 <img src="https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/palm_tree.JPG" alt="Palm trees detected" width = "100%">
 
-This exercise is to demonstrate object detection model training for Geospatial Image processing with YoloV3 and ImageAI module.
+This exercise is to demonstrate object detection model training and application in Geospatial image processing with YoloV3 and ImageAI module.
 
 If you are new to object detection with Deeplearning models, I would recommend to read below articles of Moses Olafenwa.
  - ![Object Detection with 10 lines of code](https://towardsdatascience.com/object-detection-with-10-lines-of-code-d6cb4d86f606)
  - ![Train Object Detection AI with 6 lines of code written](https://medium.com/deepquestai/train-object-detection-ai-with-6-lines-of-code-6d087063f6ff)
  
-For Applications of Deeplearning in Geospatial Field, please read ESRI's tutorial![Use deep learning to assess palm tree health](https://learn.arcgis.com/en/projects/use-deep-learning-to-assess-palm-tree-health/)
+For Applications of Deeplearning in Geospatial Field, please read ESRI's tutorial ![Use deep learning to assess palm tree health](https://learn.arcgis.com/en/projects/use-deep-learning-to-assess-palm-tree-health/). It processeses the image without a line of code! but this is not the luxary most people wont have because its deep learning modules are intergrated with ArcGIS pro which is not free.
 
-This exercise is fusion of knowledge gained from these articles.
+This exercise is fusion of knowledge gained from these articles and python skill learned from other people's sharing.
 
 |![][imageai_10]     |![][imageai_6]      |
 :-------------------:|:-------------------:
 <img src="https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/esri_ssd.PNG" alt="ESRI Tutorial" width = "100%">
 
 ### Training data preparation
-A total of about 400 images of 448 x 448 size are prepared and label partly in ArcGIS Pro and LabelImg. I just used the output tiles left over after ESRI tutorial otherwise slicing the image into tiles could be done by Qtile in QGIS or with python. 
-about 10% of the images are used for validation. Train and validation images are stored as follow as needed by ImageAI.
+A total of about 400 images of 448 x 448 size are prepared and labeled partly in ArcGIS Pro and LabelImg. I just used the output tiles left over after ESRI tutorial otherwise slicing the image into tiles could be done by Qtile in QGIS or with python and LabelImg for labeling. There are palmtree that missed labled as they are near edge when ArcGIS pro export the labled areas as image chips (tiles). So I make sure every palm trres on image chips are labeled with LabelImg application.
+
+About 10% of the images are used for validation. Train and validation images are stored as follow as needed by ImageAI.
 
 ```
 >> train    >> images       >> img_1.jpg  (shows Object_1)
@@ -44,15 +45,16 @@ It is straight forward as follow
 ```
 !pip install imageai --upgrade
 ```
+You need to restart the runtime after this installation otherwise may face some errors due to modules loaded before ImageAI installation.
 
 ### Model training
-Actually model training in this exercise is not from scratch. There is a method called "Transfer learnining" in model training in deeplearning. Although previously trained model (trained on large number of training images) does not have your object of interest (palm tree in my case), the trained weights can be used in your training so that it reduce a lot of training time.
+Actually model training in this exercise is not from scratch. There is a method called "Transfer learnining" in model training in deep learning. Although previously trained model (trained on large number of training images) does not have your object of interest (palm tree in my case), the trained weights can be used in your training so that it reduce a lot of training time.
 
 In this exercise, I used pretrained yolo model trained on COCO dataset by ImageAI.
 
-There are only 5 lines of code for model training. And also there is not much controls for hypyer-parameters except batch_size and epochs. ImageAI seems to take care of parameter configurations in the background. This is some how good for beginer learners.
+There are only 5 lines of code for model training. And also there is not much controls for hypyer-parameters except batch size and epochs. ImageAI seems to take care of parameter configurations in the background. This is some how good for beginer learners otherwise would be freak out.
 
-I trained 50 epochs and it took about 4 hours.
+I trained 50 epochs and it took about 4 hours. 
 
 ```
 trainer = DetectionModelTrainer()
@@ -122,26 +124,26 @@ I would suggest to use low probabilty threshold values during detection so as no
 ```
 
 ### View report with pandas
-The csv file contains center coordinates, width, height, aspect_ratio, probibility, area information of each bounding box of detected palm trees. width, height, aspect_ratio, and area are in pixels. These are useful for filtering higher quality results later.
+The csv file contains class name, probibility, center coordinates, height, aspect_ratio and  area information of each bounding box of detected palm trees. Width, height and area are in pixels. These are useful for filtering higher quality results later.
 
 
 | ![][csv_view]   |
 :-----------------:
 
 ### View results on Map
-For quick check, the csv file is viewed in a folium map in the notebook.
+For quick check, the csv file is viewed in a folium map in the notebook. Entire UAV mosic is too large to be displayed in the folium map. So I just put a small subset of it as an overlay.
 
 | ![][folium_map] |
 :-----------------:
 ### Keep your model and results
-Once you get out of colab, your trained model, model definition json and deteion report (csv) will be wipe off. Therefore download them before you turn off the browser.
-With the trained model and json file you can continue detection on your laptop.
+Once you get out of colab, your trained model, model definition json and detection report (csv) will be wiped off. Therefore download them before you turn off the browser.
+With the trained model and json file you can continue detection on your laptop/desktop.
 
 ### Try it now!
-you can get a notebook with datasets from ![this link](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/raw/main/Palm_tree_detection_on_large_aerial_imagery_with_yolov3_and_ImageAI_github_ver.ipynb) on my github. You open it on Google colab and read and run each cells.
+You can get a notebook with datasets from ![this link](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/raw/main/Palm_tree_detection_on_large_aerial_imagery_with_yolov3_and_ImageAI_github_ver.ipynb) on my github. You open it on Google colab and read and run each cells. Require datasets for traiing and input image will be downloaded along the way.
 
 ### Credits: 
-I would like to thank ImageAI and ESRI for sharing their articles,tutorials and Deeplearning frameworks. Without their sharing, I would not be able to learn Deeplearning application in Geospatial Image processing this much sooner.
+I would like to thank Moses Olafenwa of ImageAI and ESRI for sharing their articles, tutorials and deep learning frameworks. Without their sharing, I would not be able to learn Deep learning application in Geospatial Image processing this much sooner.
 
 ### Author
 ```
