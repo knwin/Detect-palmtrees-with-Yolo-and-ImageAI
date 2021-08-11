@@ -140,7 +140,7 @@ Once you get out of colab, your trained model, model definition json and detecti
 With the trained model and json file you can continue detection on your laptop/desktop.
 
 ### Try it now!
-You can get a notebook with datasets from ![this link](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/raw/main/Palm_tree_detection_on_large_aerial_imagery_with_yolov3_and_ImageAI_github_ver.ipynb) on my github. You open it on Google colab and read and run each cells. Require datasets for traiing and input image will be downloaded along the way.
+You can get a notebook with datasets from ![this link](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/raw/main/Palm_tree_detection_on_large_aerial_imagery_with_yolov3_and_ImageAI_github_ver.ipynb) on my github. You open it on Google colab and read and run each cells. Require datasets for training and uav mosaic image will be downloaded along the way.
 
 ### Credits: 
 I would like to thank Moses Olafenwa of ImageAI and ESRI for sharing their articles, tutorials and deep learning frameworks. Without their sharing, I would not be able to learn Deep learning application in Geospatial Image processing this much sooner.
