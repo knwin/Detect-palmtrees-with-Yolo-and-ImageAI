@@ -3,7 +3,7 @@
 
 This exercise is to demonstrate object detection model training for Geospatial Image processing with YoloV3 and ImageAI module.
 
-If you are new to objection detection I would recommend to read below articles of Moses Olafenwa.
+If you are new to object detection with Deeplearning models, I would recommend to read below articles of Moses Olafenwa.
  - ![Object Detection with 10 lines of code](https://towardsdatascience.com/object-detection-with-10-lines-of-code-d6cb4d86f606)
  - ![Train Object Detection AI with 6 lines of code written](https://medium.com/deepquestai/train-object-detection-ai-with-6-lines-of-code-6d087063f6ff)
  
