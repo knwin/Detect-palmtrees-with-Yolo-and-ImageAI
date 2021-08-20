@@ -4,10 +4,10 @@
 This exercise is to demonstrate object detection model training and application in Geospatial image processing with YoloV3 and ImageAI module.
 
 If you are new to object detection with Deeplearning models, I would recommend to read below articles of Moses Olafenwa.
- - ![Object Detection with 10 lines of code](https://towardsdatascience.com/object-detection-with-10-lines-of-code-d6cb4d86f606)
- - ![Train Object Detection AI with 6 lines of code written](https://medium.com/deepquestai/train-object-detection-ai-with-6-lines-of-code-6d087063f6ff)
+ - ![Object Detection with 10 lines of code]https://towardsdatascience.com/object-detection-with-10-lines-of-code-d6cb4d86f606
+ - ![Train Object Detection AI with 6 lines of code written]https://medium.com/deepquestai/train-object-detection-ai-with-6-lines-of-code-6d087063f6ff
  
-For Applications of Deeplearning in Geospatial Field, please read ESRI's tutorial ![Use deep learning to assess palm tree health](https://learn.arcgis.com/en/projects/use-deep-learning-to-assess-palm-tree-health/). It processeses the image without a line of code! but this is not the luxary most people wont have because its deep learning modules are intergrated with ArcGIS pro which is not free.
+For Applications of Deeplearning in Geospatial Field, please read ESRI's tutorial ![Use deep learning to assess palm tree health]https://learn.arcgis.com/en/projects/use-deep-learning-to-assess-palm-tree-health/. It processeses the image without a line of code! but this is not the luxary most people wont have because its deep learning modules are intergrated with ArcGIS pro which is not free.
 
 This exercise is fusion of knowledge gained from these articles and python skill learned from other people's sharing.
 
