@@ -15,11 +15,10 @@ Geospatial နယ်ပယ်တွင် Deeplearning နည်းပညာ အ
 :-------------------:|:-------------------:
 <img src="https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/esri_ssd.PNG" alt="ESRI Tutorial" width = "100%">
 
-### Training data preparation
-A total of about 400 images of 448 x 448 size are prepared and labeled partly in ArcGIS Pro and LabelImg. I just used the output tiles left over after ESRI tutorial otherwise slicing the image into tiles could be done by Qtile in QGIS or with python and LabelImg for labeling. There are palmtree that missed labled as they are near edge when ArcGIS pro export the labled areas as image chips (tiles). So I make sure every palm trres on image chips are labeled with LabelImg application.
+### ပရိုဂရမ်ကိုသင်ကြားရန်ပြင်ဆင်ခြင်း
+၄၄၈ x ၄၄၈ အရွယ် ပုံပေါင်း၄၀၀ ခန့်ကို မူလ mosaic ကနေဖြတ်ထုတ်ပြီး labelImg app နဲ့ စာထိုးပါတယ်။ (မူလက ESRI turorial လုပ်တုံးက ကျန်ခဲ့တဲ့  image chip တွေကို လည်းဆက်သုံးခဲ့ပါသေးတယ်။) စာထိုးတယ်ဆိုတာ အုန်းပင် ကို ခြုံပြီး လေးထောင့်ကွက်ဆွဲပေးပြီး palm_tree လို့မှတ်ပေးတာပါ။ ပုံစိတ်တာ ကို tiling လုပ်တယ်လို့ ခေါ်ပါတယ်။ ပုံလေးတွေကို tile သို့မဟုတ် chip လို့လည်းခေါ်ပါတယ်။ ဒီပုံလေးတွေထဲက သတ်မှတ်ပေးထားတဲ့ အရာဝတ္ထုတွေကို စက်ကဖတ်ပြီး ဘယ်အရာဝတ္ထုက ဘယ်လို ဆိုတာ သူ့ဖာသာ နားလည်အောင် သင်ယူသွားမှာပါ။ 
 
-About 10% of the images are used for validation. Train and validation images are stored as follow as needed by ImageAI.
-
+ပုံတွေထဲက ၁၀ ရာခိုင်နှုံးကို သင်ပြီးတဲ့ model  က ဘယ်လောက်ကောင်းတယ်ဆိုတာ သိရဖို့ စစ်ဆေးဖို့ခွဲထားပါတယ်။ test/validation images လို့ခေါ်ပါတယ်။ သင်ယူရာမှာ သုံးမယ့် ၉၀ရာခိုင်နှုံးပုံ‌တွေ ကိုတော့ training images လို့ခေါ်ပါတယ်။ စာထိုးထားတဲ့ လေးထောင့်ကွက်တွေက xml file နဲ့သပ်သပ်သိမ်းထားလို့ xml ဖိုင် တွေကိုလည်း annotations ဆိုတဲ့ဖိုဒါတွေအောက်မှာ သိမ်းထားရပါတယ်။ အဲဒီနှစ်စုကို ဖိုဒါနှစ်ခု ခွဲပြီး ImageAI moduel ရဲ့လိုအပ်ချက် အရ အောက်ပါအတိုင်း စီစဉ်ပါတယ်။
 ```
 >> train    >> images       >> img_1.jpg  (shows Object_1)
             >> images       >> img_2.jpg  (shows Object_2)
@@ -40,21 +39,21 @@ About 10% of the images are used for validation. Train and validation images are
 
 | ![tiles with annotation overlay][view_images]|
 :-----------------:
-### ImageAI installation
-It is straight forward as follow
+### ImageAI moduel ထည့်ခြင်း
+notebook ရဲ့ ဆဲကွက်ထဲ မှာ သို့မဟုတ် command prompt အောက်ပါအတိုင်း ရိုက်ပြီး ခိုင်းလိုက်ရင် အင်တာနက်က နေ ရယူထည့်သွင်းသွားမှာပါ။ မိမိစက်မှာ ဆို တစ်ခါတည်းလုပ်ရမှာဖြစ်ပေမယ့် Google Colab မှာဆိုရင်တော့ အကြိမ်တိုင်း (ထွက်ပြီးပြန်ဝင်တိုင်း) install လုပ်ဖို့လိုမှာပါ။
 ```
 !pip install imageai --upgrade
 ```
-You need to restart the runtime after this installation otherwise may face some errors due to modules loaded before ImageAI installation.
+ImageAI ထည့်စဉ်မှာ ပါလာတဲ့ အဖော် module တွေပါ အသက်ဝင်လာဖို့ runtime ကို ပြန်စ (restart) ဖို့လိုပါလိမ့်မယ်။
 
-### Model training
-Actually model training in this exercise is not from scratch. There is a method called "Transfer learnining" in model training in deep learning. Although previously trained model (trained on large number of training images) does not have your object of interest (palm tree in my case), the trained weights can be used in your training so that it reduce a lot of training time.
+### Model ကိုသင်ကြားပေးခြင်း
+ဒီနေရာမှာ model ကိုသင်ပေးတယ်ဆိုတာ က တကယ်တော့ ကကြီးရေ က ကနေစသင်တာ တော့မဟုတ်ပါဘူး။ အခြားအရာဝတ္ထုတွေကို ခွဲခြားဖို့သင်ပေးထားပြီးသား model တစ်ခုကနေ သူသိပြီးသား အချက်အလက်တွေကို ရယူသုံးပြီး သင်တာပါ။ အဲဒီမော်ဒယ်က အုံးပင်တွေခွဲခြားဖို့ မသင်ခဲ့ဖူးပါဘူး။ ဒီလို ရှေ့က model ဆီက weigth တွေကို ယူသုံးပြီးသင်တာကို  လက်ဆင့်ကမ်းသင်ခြင်း (transfer learning) လို့ခေါ်ပါတယ်။ ဒီလိုသင်ခြင်းအားဖြင့် အချိန်နည်းနည်းအကြီမ်ရေနည်းနည်း နဲ့ ရလာဒ်ကောင်းကောင်း သင်ပေးနိုင်ပါတယ်။ အစကနေသာ စ သင်မယ်ဆိုရင် ပုံပေါင်းသောင်းနဲ့ချီလိုပြီး နာရီ ပေါင်း များစွာ ( ၁ - ၇ ရက်) ထိကြာပါတယ်။
 
-In this exercise, I used pretrained yolo model trained on COCO dataset by ImageAI.
+ယခု လုပ်ဆောင်ပြချက်မှာ တော့ ImageAI ရဲ့  နေ့စဉ်တွေ့နေကြအရာဝတ္ထု ၈၀ အတွက် ကျင့်ထားတဲ့ model တစ်ခုကို လက်ဆင့်ကမ်းသင်ဖို့ ယူသုံးသွားမှာဖြစ်ပါတယ်။ 
 
-There are only 5 lines of code for model training. And also there is not much controls for hypyer-parameters except batch size and epochs. ImageAI seems to take care of parameter configurations in the background. This is some how good for beginer learners otherwise would be freak out.
+သင်တာကို လုပ်တဲ့ code က (၅) ကြောင်းပဲရှိပါတယ်။ သင်ကြားရာမှာ ထိန်းချုပ် တဲ့ hyper-parameter လို့ခေါ်တဲ့အသေးစိတ် အချက်အလက်လေးတွေ အများကြီးရှိပါတယ်။ ImageAI မှာ batch_size (တစ်ခါသင် ဘယ်နှစ်ပုံ) နဲ့ အကြိမ်ရေ epochs ဘယ်လောက် (ပုံအကုန်လုံးပြီးမှ တစ်ကြိမ်လိုသတ်မှတ်ပါတယ်) ဆိုတာ ပဲ ထည့်ပေးရပါတယ် ကျန်တာ တွေက တော့ သူ့ဘာသာ နောက်ကွယ်မှာ ကြည်ကျက်လုပ်သွားတယ်လို့ထင်ပါတယ် :D ။ အခုမှစ လေ့လာမယ့်သူတွေအတွက် တော့ ခေါင်းသိပ်မစားရ တော့ဘူးပေါ့။
 
-I trained 50 epochs and it took about 4 hours. 
+Google colab မှာ ကျွန်တော် သင်တာ တော့ အကြိမ် ၅၀ အတွက် ၄ နာရီလောက်ကြာခဲ့ပါတယ်။ 
 
 ```
 trainer = DetectionModelTrainer()
@@ -97,8 +96,10 @@ Epoch 5/5
 ....
 
 ```
+သင်ပြီးရင်လည်း model က ဘယ်လောက်ကောင်းတယ်မကောင်းတယ်ဆိုတာ လည်းကြည့်ရပါသေးတယ်။ မကောင်းရင် ဘာတွေလုပ်ဖို့လိုမလဲ စဉ်းစားရပါတယ်။ training lableတွေမှားလို့လား၊ training imageနည်းလို့လား၊ batch_size တိုးမလားလျော့မလား၊ learning rate တိုးမလားလျော့မလား စသည်ဖြင့်၊ လိုအပ်ရင် epoch အကြိမ်ရေတိုး ပြီး သင်ရပါတယ်။ မိတ်ဆက်သဘော မို့ ဒါတွေကိုအသေးစိတ်ဒီမှာ ရေးမပြတော့ပါ။
+
 ### Detection on UAV image
-Although training tile images are created from areal imagery, there is a huge difference in size. While tiles are 448 x 448, original image is about 18,000 x 25,000. As a results, detection directly on the original image produce not output at all. Therefore original image is split into tiles during the detection process and results are stored in a csv file. Location of Bounding boxes are converted to GCS coordinates so that the results could be displacy on the map.
+ရလာတဲ့ model ကို ကဲ ဒီ mosaic ထဲမှာ အုံးပင်ရှာ ပါလည်းဆိုရော ရှာပါတော့တယ် ဒါပေမယ့် ပြီးသာ သွားတယ် ဘာ အုံးပင်တစ်ခုမှ ရှာလို့မတွေ့ဘူး။အကြောင်းက တော့ မူလက သင်ပေးတုံးက ပုံလေးတွေက ၄၄၈ x ၄၄၈ အရွယ်လေးတွေ၊ အုံးပင် ရှာခိုင်းတဲ့ပုံက ၁၈၀၀၀ x ၂၅၀၀၀ အရွယ်ကြီးဖြစ်နေလို့ ဖြစ်ရတာပါ။ ဒါနဲ့ မူလပုံအကြီးကို အစိတ်လေးတွေစိတ်ပြီး အစိတ်တစ်ခုခြင်းထဲမှာ ရှာခိုင်းလိုက်တော့မှ အဆင်ပြေသွားပါတယ်။ တွေ့တဲ့ အုံးပင် တည်နေရာ lat-lon, အရွယ်အစား, ဖြစ်တန်စွမ်း, စတာ တွေကို csv ဖိုင်နဲ့ သိမ်းခိုင်းထားလိုက်ပါတယ်။ csv  ရရင် image ပေါ်မှာ point တွေတင်လို့ရပြီ‌။
 
 
 ```
@@ -122,33 +123,39 @@ I would suggest to use low probabilty threshold values during detection so as no
 
             detection results are saved in detection_report.csv
 ```
+၈မိနစ်လောက်အတွင်းမှာ ရှာလို့ပြီးသွားပါတယ်။ အုံးပင် တစ်သောင်းလေးထောင်ကျော် တွေ့တယ်လို့ သတင်းပို့တာ မြင်ရပါတယ်။
 
-### View report with pandas
-The csv file contains class name, probibility, center coordinates, height, aspect_ratio and  area information of each bounding box of detected palm trees. Width, height and area are in pixels. These are useful for filtering higher quality results later.
 
+
+### အုံးပင်စာရင်း ကို လျပ်တစ်ပျက် စစ်ဆေးခြင်း
+ထွက်လာတဲ့ csv ကို pandas နဲ့ လျပ်တစ်ပျက်ကြည့်လိုရပါတယ်။ အလျား၊အနံ၊ ပုံအချိုး နဲ့ ဧရိယာ တန်ဖိုးတွေက pixel နဲ့ပါ ။ ဒါတွေကိုသုံးပြီး မသေခြာတဲ့ အုံးပင် တွေကို ဖယ်လို့ရပါတယ်။
 
 | ![][csv_view]   |
 :-----------------:
 
-### View results on Map
-For quick check, the csv file is viewed in a folium map in the notebook. Entire UAV mosic is too large to be displayed in the folium map. So I just put a small subset of it as an overlay.
+### မြေပုံနဲ့ကြည့်မယ်
+စာရင်းကြည့်ယုံနဲ့အားမရသေးရင် notebook ထဲမှာပဲ Folium နဲ့ မြေပုံလုပ်ပြီး တစ်ခါတည်းကြည့်လို့ရပါတယ်။ လေးမှာစိုးလို့ မူလ mosaic ကို အပြည့်မတင်ပဲ ဖြတ်ပြီးတင်လိုက်တယ်။
 
 | ![][folium_map] |
 :-----------------:
-### Keep your model and results
-Once you get out of colab, your trained model, model definition json and detection report (csv) will be wiped off. Therefore download them before you turn off the browser.
-With the trained model and json file you can continue detection on your laptop/desktop.
+
+### သင်စိုက်ပျိုးထားတဲ့ အသီးအပွင်တွေကို ရိတ်သိမ်းယူသွားပါ
+Google colab ကို ပိတ်လိုက်ရင် csv ဖိုင် နဲ့ model ပါအကုန် ရှင်းပစ်လိုက်မှာပါ။ ဒါကြောင့် csv ဖိုင် နဲ့ model ဖိုင်နဲ့ model definition json ဖိုင်တွေကို ဒေါင်းထားဖို့လိုပါလိမ့်မယ်။ model ဖိုင်နဲ့ model definition json ဖိုင်တွေသုံးပြီး မိမိစက်ပေါ်မှာ ဆက်လုပ် လို့ရပါတယ်။ ရှာ ဖို့ အတွက် GPU မရှိလည်းရပါတယ် နည်းနည်းလေးပဲ ပိုကြာပါတယ်။
 
 ### Try it now!
 You can get a notebook with datasets from ![this link](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/raw/main/Palm_tree_detection_on_large_aerial_imagery_with_yolov3_and_ImageAI_github_ver.ipynb) on my github. You open it on Google colab and read and run each cells. Require datasets for training and uav mosaic image will be downloaded along the way.
 
-### Credits: 
-I would like to thank Moses Olafenwa of ImageAI and ESRI for sharing their articles, tutorials and deep learning frameworks. Without their sharing, I would not be able to learn Deep learning application in Geospatial Image processing this much sooner.
+### ကဲ အခုစမ်းသပ်ချင်လာပြီလား!
 
-### Author
+code တွေ training data နဲ့ mosaic image တွေပါတဲ့ notebook ကို ကျနော့် ![github repo link] (https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/raw/main/Palm_tree_detection_on_large_aerial_imagery_with_yolov3_and_ImageAI_github_ver.ipynb) ကနေရယူနိုင်ပါတယ်။ သူ့ကို colab ကနေဖွင့်ပြီး စမ်းကြည့်လို့ရပါတယ်။ open in colab ကိုသာနှိပ်လိုက်ပါ။
+
+### ကျေးဇူးတင်ထိုက်သူများ 
+ImageAI ဖန်တီးမျှဝေသူ Moses Olafenwa  နဲ့  ESRI ကိုကျေးဇူးတင်ရှိပါတယ်။ သူတို့တွေမျှဝေပေးလို့သာ ယခုလို စမ်းသပ်ကြည့်နိုင်ခဲ့တာပါ။သူတို့တွေဆီက နေသာ သင်ယူခွင့်မရခဲ့ ရင် deep learning ဆိုတာကြီးကို တော်တော်နဲ့ ထိတွေ့ဖြစ်အုံးမှာမဟုတ်ပါဘူး
+
+### ရေးသားမျှဝေသူ
 ```
-Kyaw Naing Win
-11 August 2021
+ကျော်နိုင်ဝင်း
+၂၀၂၁ ခုနှစ် ဩဂုတ်လ ၁၁ ရက်
 ```
 
 
