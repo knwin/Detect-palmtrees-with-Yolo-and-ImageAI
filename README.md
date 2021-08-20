@@ -4,10 +4,10 @@
 This exercise is to demonstrate object detection model training and application in Geospatial image processing with YoloV3 and ImageAI module.
 
 If you are new to object detection with Deeplearning models, I would recommend to read below articles of Moses Olafenwa.
- - ![Object Detection with 10 lines of code]https://towardsdatascience.com/object-detection-with-10-lines-of-code-d6cb4d86f606
- - ![Train Object Detection AI with 6 lines of code written]https://medium.com/deepquestai/train-object-detection-ai-with-6-lines-of-code-6d087063f6ff
+ - [Object Detection with 10 lines of code](https://towardsdatascience.com/object-detection-with-10-lines-of-code-d6cb4d86f606)
+ - [Train Object Detection AI with 6 lines of code written](https://medium.com/deepquestai/train-object-detection-ai-with-6-lines-of-code-6d087063f6ff)
  
-For Applications of Deeplearning in Geospatial Field, please read ESRI's tutorial ![Use deep learning to assess palm tree health]https://learn.arcgis.com/en/projects/use-deep-learning-to-assess-palm-tree-health/. It processeses the image without a line of code! but this is not the luxary most people wont have because its deep learning modules are intergrated with ArcGIS pro which is not free.
+For Applications of Deeplearning in Geospatial Field, please read ESRI's tutorial [Use deep learning to assess palm tree health](https://learn.arcgis.com/en/projects/use-deep-learning-to-assess-palm-tree-health/). It processeses the image without a line of code! but this is not the luxary most people wont have because its deep learning modules are intergrated with ArcGIS pro which is not free.
 
 This exercise is fusion of knowledge gained from these articles and python skill learned from other people's sharing.
 
@@ -140,7 +140,7 @@ Once you get out of colab, your trained model, model definition json and detecti
 With the trained model and json file you can continue detection on your laptop/desktop.
 
 ### Try it now!
-You can get a notebook with datasets from ![this link](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/raw/main/Palm_tree_detection_on_large_aerial_imagery_with_yolov3_and_ImageAI_github_ver.ipynb) on my github. You open it on Google colab and read and run each cells. Require datasets for training and uav mosaic image will be downloaded along the way.
+You can get a notebook with datasets from [this link](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/Palm_tree_detection_on_large_aerial_imagery_with_yolov3_and_ImageAI_github_ver.ipynb) on my github. You open it on Google colab and read and run each cells. Require datasets for training and uav mosaic image will be downloaded along the way.
 
 ### Credits: 
 I would like to thank Moses Olafenwa of ImageAI and ESRI for sharing their articles, tutorials and deep learning frameworks. Without their sharing, I would not be able to learn Deep learning application in Geospatial Image processing this much sooner.
