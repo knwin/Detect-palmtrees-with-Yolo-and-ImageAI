@@ -1,4 +1,4 @@
-# ကောင်းကင်ဓါတ်ပုံ mosaic မှ အုံးပင်များ Yolog နှင့် ImageAI သုံးပြီး ဖြင့် ခွဲထုတ်ခြင်း
+# ကောင်းကင်ဓါတ်ပုံ mosaic မှ အုံးပင်များ ကို Yolo နှင့် ImageAI သုံးပြီး ခွဲထုတ်ခြင်း
 <img src="https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/images/palm_tree.JPG" alt="Palm trees detected" width = "100%">
 
 ယခု ဆောင်းပါးသည် Geospatial နယ်ပယ်တွင် YoloV3 နှင့် ImageAI deep learning နည်းပညာသုံးပြီး အရာဝတ္ထုများကို ရှာဖွေနိုင်ပုံကို တင်ပြခြင်း ဖြစ်ပါသည်။
@@ -7,9 +7,9 @@ Deep learning နည်းပညာသုံးပြီး အရာဝတ္�
  - ![Object Detection with 10 lines of code](https://towardsdatascience.com/object-detection-with-10-lines-of-code-d6cb4d86f606)
  - ![Train Object Detection AI with 6 lines of code written](https://medium.com/deepquestai/train-object-detection-ai-with-6-lines-of-code-6d087063f6ff)
  
-For Applications of Deeplearning in Geospatial Field, please read ESRI's tutorial ![Use deep learning to assess palm tree health](https://learn.arcgis.com/en/projects/use-deep-learning-to-assess-palm-tree-health/). It processeses the image without a line of code! but this is not the luxary most people wont have because its deep learning modules are intergrated with ArcGIS pro which is not free.
+Geospatial နယ်ပယ်တွင် Deeplearning နည်းပညာ အသုံးချမှုများကို လေ့လာရန် စိတ်ဝင်စားပါက ESRI's ၏ ![အုန်းပင်များ၏ကျန်းမာရေးကို Deeplearning နည်းပညာဖြင့်လေ့လာခြင်း](https://learn.arcgis.com/en/projects/use-deep-learning-to-assess-palm-tree-health/) သင်ခန်းစာ ကို ဖတ်ရှုကြည့်ပါ။ ယင်းသင်ခန်းစာ တွင် code တစ်ကြောင်းမျှမပါပဲ dialog box ဖြင့် အလုပ်လုပ်သွားသည်ကို တွေ့ရပါမည်။ သို့သော် ArcGIS Pro ကို အသုံးပြုထားသဖြင့် လူတိုင်း လိုက်လုပ်နိုင်မည်တော့ မဟုတ်ပါ။
 
-This exercise is fusion of knowledge gained from these articles and python skill learned from other people's sharing.
+ယခုတင်ပြချက်သည် အထက်ပါ သင်ခန်းစာ နှင့် ဆောင်းပါးများ အပြင် ယခင်ရှေ့က လေ့လာဖူးသော အခြားသူတို့မျှဝေပေးသည့် သင်ခန်းစာများနှင့် ဆောင်းပါးများ  မှ ရရှိလာသော အသိပညာ နှင့် ကျွမ်းကျင်မှုများကို ပြန်လည် အသုံးချထားခြင်း ဖြစ်ပါသည်။
 
 |![][imageai_10]     |![][imageai_6]      |
 :-------------------:|:-------------------:
