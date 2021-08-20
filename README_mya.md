@@ -144,7 +144,7 @@ Google colab ကို ပိတ်လိုက်ရင် csv ဖိုင် 
 
 ### ကဲ အခုစမ်းသပ်ချင်လာပြီလား!
 
-code တွေ training data နဲ့ mosaic image တွေပါတဲ့ notebook ကို ကျနော့် [github repo link](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/raw/main/Palm_tree_detection_on_large_aerial_imagery_with_yolov3_and_ImageAI_github_ver.ipynb) ကနေရယူနိုင်ပါတယ်။ သူ့ကို colab ကနေဖွင့်ပြီး စမ်းကြည့်လို့ရပါတယ်။ open in colab ကိုသာနှိပ်လိုက်ပါ။
+code တွေ training data နဲ့ mosaic image တွေပါတဲ့ notebook ကို ကျနော့် [github repo link](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/blob/main/Palm_tree_detection_on_large_aerial_imagery_with_yolov3_and_ImageAI_github_ver.ipynb) ကနေရယူနိုင်ပါတယ်။ သူ့ကို colab ကနေဖွင့်ပြီး စမ်းကြည့်လို့ရပါတယ်။ open in colab ကိုသာနှိပ်လိုက်ပါ။
 
 ### ကျေးဇူးတင်ထိုက်သူများ 
 ImageAI ဖန်တီးမျှဝေသူ Moses Olafenwa  နဲ့  ESRI ကိုကျေးဇူးတင်ရှိပါတယ်။ သူတို့တွေမျှဝေပေးလို့သာ ယခုလို စမ်းသပ်ကြည့်နိုင်ခဲ့တာပါ။သူတို့တွေဆီက နေသာ သင်ယူခွင့်မရခဲ့ ရင် deep learning ဆိုတာကြီးကို တော်တော်နဲ့ ထိတွေ့ဖြစ်အုံးမှာမဟုတ်ပါဘူး
