@@ -4,10 +4,10 @@
 ယခု ဆောင်းပါးသည် Geospatial နယ်ပယ်တွင် YoloV3 နှင့် ImageAI deep learning နည်းပညာသုံးပြီး အရာဝတ္ထုများကို ရှာဖွေနိုင်ပုံကို တင်ပြခြင်း ဖြစ်ပါသည်။
 
 Deep learning နည်းပညာသုံးပြီး အရာဝတ္ထုများကို ရှာဖွေနိုင် သည့်အကြောင်းအရာ နှင့် မရင်းနှီး အသုံးမချဖူးပါက Moses Olafenwa အောက်ပါ ၏ ဆောင်းပါများဖတ်ပြီး စမ်းသပ်ကြည့်ရန် အကြံပြုပါသည်။
- - ![Object Detection with 10 lines of code]https://towardsdatascience.com/object-detection-with-10-lines-of-code-d6cb4d86f606
- - ![Train Object Detection AI with 6 lines of code written]https://medium.com/deepquestai/train-object-detection-ai-with-6-lines-of-code-6d087063f6ff
+ - [Object Detection with 10 lines of code](https://towardsdatascience.com/object-detection-with-10-lines-of-code-d6cb4d86f606)
+ - [Train Object Detection AI with 6 lines of code written](https://medium.com/deepquestai/train-object-detection-ai-with-6-lines-of-code-6d087063f6ff)
  
-Geospatial နယ်ပယ်တွင် Deeplearning နည်းပညာ အသုံးချမှုများကို လေ့လာရန် စိတ်ဝင်စားပါက ESRI's ၏ ![အုန်းပင်များ၏ကျန်းမာရေးကို Deeplearning နည်းပညာဖြင့်လေ့လာခြင်း]https://learn.arcgis.com/en/projects/use-deep-learning-to-assess-palm-tree-health/ သင်ခန်းစာ ကို ဖတ်ရှုကြည့်ပါ။ ယင်းသင်ခန်းစာ တွင် code တစ်ကြောင်းမျှမပါပဲ dialog box ဖြင့် အလုပ်လုပ်သွားသည်ကို တွေ့ရပါမည်။ သို့သော် ArcGIS Pro ကို အသုံးပြုထားသဖြင့် လူတိုင်း လိုက်လုပ်နိုင်မည်တော့ မဟုတ်ပါ။
+Geospatial နယ်ပယ်တွင် Deeplearning နည်းပညာ အသုံးချမှုများကို လေ့လာရန် စိတ်ဝင်စားပါက ESRI's ၏ [အုန်းပင်များ၏ကျန်းမာရေးကို Deeplearning နည်းပညာဖြင့်လေ့လာခြင်း](https://learn.arcgis.com/en/projects/use-deep-learning-to-assess-palm-tree-health/) သင်ခန်းစာ ကို ဖတ်ရှုကြည့်ပါ။ ယင်းသင်ခန်းစာ တွင် code တစ်ကြောင်းမျှမပါပဲ dialog box ဖြင့် အလုပ်လုပ်သွားသည်ကို တွေ့ရပါမည်။ သို့သော် ArcGIS Pro ကို အသုံးပြုထားသဖြင့် လူတိုင်း လိုက်လုပ်နိုင်မည်တော့ မဟုတ်ပါ။
 
 ယခုတင်ပြချက်သည် အထက်ပါ သင်ခန်းစာ နှင့် ဆောင်းပါးများ အပြင် ယခင်ရှေ့က လေ့လာဖူးသော အခြားသူတို့မျှဝေပေးသည့် သင်ခန်းစာများနှင့် ဆောင်းပါးများ  မှ ရရှိလာသော အသိပညာ နှင့် ကျွမ်းကျင်မှုများကို ပြန်လည် အသုံးချထားခြင်း ဖြစ်ပါသည်။
 
@@ -144,7 +144,7 @@ Google colab ကို ပိတ်လိုက်ရင် csv ဖိုင် 
 
 ### ကဲ အခုစမ်းသပ်ချင်လာပြီလား!
 
-code တွေ training data နဲ့ mosaic image တွေပါတဲ့ notebook ကို ကျနော့် ![github repo link](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/raw/main/Palm_tree_detection_on_large_aerial_imagery_with_yolov3_and_ImageAI_github_ver.ipynb) ကနေရယူနိုင်ပါတယ်။ သူ့ကို colab ကနေဖွင့်ပြီး စမ်းကြည့်လို့ရပါတယ်။ open in colab ကိုသာနှိပ်လိုက်ပါ။
+code တွေ training data နဲ့ mosaic image တွေပါတဲ့ notebook ကို ကျနော့် [github repo link](https://github.com/knwin/Detect-palmtrees-with-Yolo-and-ImageAI/raw/main/Palm_tree_detection_on_large_aerial_imagery_with_yolov3_and_ImageAI_github_ver.ipynb) ကနေရယူနိုင်ပါတယ်။ သူ့ကို colab ကနေဖွင့်ပြီး စမ်းကြည့်လို့ရပါတယ်။ open in colab ကိုသာနှိပ်လိုက်ပါ။
 
 ### ကျေးဇူးတင်ထိုက်သူများ 
 ImageAI ဖန်တီးမျှဝေသူ Moses Olafenwa  နဲ့  ESRI ကိုကျေးဇူးတင်ရှိပါတယ်။ သူတို့တွေမျှဝေပေးလို့သာ ယခုလို စမ်းသပ်ကြည့်နိုင်ခဲ့တာပါ။သူတို့တွေဆီက နေသာ သင်ယူခွင့်မရခဲ့ ရင် deep learning ဆိုတာကြီးကို တော်တော်နဲ့ ထိတွေ့ဖြစ်အုံးမှာမဟုတ်ပါဘူး
